@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import "./App.css";
+import Navbar from './components/Navbar';
+import Feeds from './components/Feeds';
+import Indian from './components/Indian';
+import Stocks from './components/Stocks';
+import Mobiles from './components/Mobiles';
+//import Login from './components/Login';
+
+import Footer from './components/Footer';
+import { Route} from "react-router-dom";
+
+
+const App =()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+         <Navbar/>
+
+<Route exact path="/">
+<Feeds />
+</Route>
+
+<Route path="/Indian">
+<Indian />
+</Route>
+
+<Route path="/Stocks">
+<Stocks />
+</Route>
+
+<Route path="/Mobiles">
+<Mobiles />
+</Route>
+
+<Footer/>
+</>
+
+  )
 }
 
-export default App;
+export default App
